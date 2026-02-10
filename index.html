@@ -70,18 +70,17 @@
     <p>So I wanted to ask you properly…</p>
     <h2>Will you be my Valentine? 💖</h2>
 
-    <button class="yes" onclick="sayYes()">Yes 💕</button>
+  <button id="yesBtn">Yes 💕</button>
     <button class="no" onmouseover="moveNo(this)">No 🙈</button>
-  </div>
-
-  <script>
-    function sayYes() {
-      document.getElementById("card").innerHTML = `
-        <h1>You said YES 💖</h1>
-        <p>You have no idea how happy that makes me.</p>
-        <p>I’ve already planned something special for us 😌</p>
-        <p>All you need to do is show up and let me spoil you.</p>
-        <p style="margin-top:1.5rem;">❤️</p>
+  <div id="surprise" style="display:none;">
+  <h1>She said YES 💖</h1>
+  <p>
+    You have no idea how happy this makes me.<br>
+    I promise to choose you, laugh with you,<br>
+    and love you a little better every day.
+  </p>
+  <p>Happy Valentine’s, my person 🌹</p>
+    <p style="margin-top:1.5rem;">❤️</p>
       `;
     }
 
@@ -90,6 +89,13 @@
       const y = Math.random() * 200 - 100;
       btn.style.transform = \`translate(\${x}px, \${y}px)\`;
     }
-  </script>
+  <script>
+  document.getElementById("yesBtn").onclick = function () {
+    document.querySelector(".card").style.display = "none";
+    document.getElementById("surprise").style.display = "block";
+  };
+</script>
+  <div class="card">
+    
 </body>
 </html>
